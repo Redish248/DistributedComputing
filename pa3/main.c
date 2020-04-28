@@ -136,7 +136,6 @@ int receive(void *self, local_id from, Message *msg) {
     }
 
     if (msg->s_header.s_magic != MESSAGE_MAGIC) {
-        //log invalid message magic or return smth
         return -2;
     }
 
@@ -157,7 +156,7 @@ int receive(void *self, local_id from, Message *msg) {
             messagesDoneLeft--;
             break;
         case TRANSFER:
-            ((process_t *) self)->lamport_time++;
+         //   ((process_t *) self)->lamport_time++;
             receiveTransfer(msg);
             break;
         case STOP:
@@ -199,13 +198,12 @@ int receive_any(void *self, Message *msg) {
 void transfer(void *parent_data, local_id src, local_id dst,
               balance_t amount) {
 
-    processes[src].lamport_time++;
 
     bool gotResponse = false;
     MessageHeader messageHeader;
     messageHeader.s_magic = MESSAGE_MAGIC;
     messageHeader.s_type = TRANSFER;
-    messageHeader.s_local_time = processes[src].lamport_time++;
+    processes[currentId].lamport_time++;
     messageHeader.s_local_time = get_lamport_time();
     Message message;
     message.s_header = messageHeader;
@@ -313,7 +311,7 @@ int forkProcesses() {
             processes[i].id = i;
             processes[i].pid = child;
             processes[i].parentPid = processes[0].pid;
-          //  processes[i].lamport_time = 0;
+            processes[i].lamport_time = 0;
             //   printf(log_started_fmt, i, child, processes[0].pid);
         } else {
             if (child == 0) {
@@ -322,7 +320,7 @@ int forkProcesses() {
                 processes[i].id = i;
                 processes[i].pid = getpid();
                 processes[i].parentPid = processes[0].pid;
-            //    processes[i].lamport_time = 0;
+                processes[i].lamport_time = 0;
                 balanceHistory.s_id = currentId;
                 setBalance(get_lamport_time(), startBalances[i], 0);
                 break;
@@ -417,9 +415,10 @@ void setBalance(timestamp_t  time, balance_t balance, balance_t amount) {
 
 void changeBalance(timestamp_t time, balance_t amount) {
     for (timestamp_t t = lastTimeMoment + 1; t < time; t++) {
-        setBalance(t, balanceHistory.s_history[lastTimeMoment].s_balance, amount);
+        setBalance(t, balanceHistory.s_history[lastTimeMoment].s_balance, balanceHistory.s_history[lastTimeMoment-1].s_balance_pending_in);
     }
     setBalance(time, balanceHistory.s_history[lastTimeMoment].s_balance + amount, amount);
+    setBalance(time + 1, balanceHistory.s_history[lastTimeMoment].s_balance, amount);
 }
 
 void sendBalanceHistory() {
@@ -445,18 +444,14 @@ void receiveHistory(Message* msg) {
 }
 
 void prepareHistory() {
-    timestamp_t t = 0;
-    for (uint8_t p = 0; p < allHistory.s_history_len; p++) {
-        if (allHistory.s_history[p].s_history_len > t)
-            t = allHistory.s_history[p].s_history_len;
-    }
+    timestamp_t t = get_lamport_time();
     for (uint8_t p = 0; p < allHistory.s_history_len; p++) {
         if (allHistory.s_history[p].s_history_len < t) {
             for (uint8_t time = allHistory.s_history[p].s_history_len; time < t; time++) {
                 allHistory.s_history[p].s_history[time] = (BalanceState) {
                         .s_balance =  allHistory.s_history[p].s_history[allHistory.s_history[p].s_history_len-1].s_balance,
                         .s_time =  time,
-                        .s_balance_pending_in =  allHistory.s_history[p].s_history[allHistory.s_history[p].s_history_len-1].s_balance_pending_in
+                        .s_balance_pending_in =  0
                 };
             }
             allHistory.s_history[p].s_history_len = t;

@@ -1,14 +1,26 @@
-0: process 1 (pid 19677, parent 19676) has STARTED with balance $10
-2: process 1 received all STARTED messages
-5: process 1 transferred $ 1 to process 2
-15: process 1 received $ 1 from process 2
-15: process 1 has DONE with balance $10
-21: process 1 received all DONE messages
-0: process 2 (pid 19678, parent 19676) has STARTED with balance $10
-2: process 2 received all STARTED messages
-8: process 2 received $ 1 from process 1
-12: process 2 transferred $ 1 to process 1
-12: process 2 has DONE with balance $10
-21: process 2 received all DONE messages
-3: process 0 received all STARTED messages
-22: process 0 received all DONE messages
+0: process 1 (pid  2393, parent  2392) has STARTED with balance $10
+8: process 1 transferred $ 1 to process 2
+11: process 1 received all STARTED messages
+28: process 1 received $ 1 from process 4
+28: process 1 has DONE with balance $10
+35: process 1 received all DONE messages
+0: process 2 (pid  2394, parent  2392) has STARTED with balance $10
+4: process 2 received all STARTED messages
+10: process 2 received $ 1 from process 1
+14: process 2 transferred $ 2 to process 3
+14: process 2 has DONE with balance $ 9
+35: process 2 received all DONE messages
+0: process 3 (pid  2395, parent  2392) has STARTED with balance $10
+4: process 3 received all STARTED messages
+16: process 3 received $ 2 from process 2
+20: process 3 transferred $ 3 to process 4
+20: process 3 has DONE with balance $ 9
+35: process 3 received all DONE messages
+0: process 4 (pid  2396, parent  2392) has STARTED with balance $10
+4: process 4 received all STARTED messages
+22: process 4 received $ 3 from process 3
+26: process 4 transferred $ 1 to process 1
+26: process 4 has DONE with balance $12
+35: process 4 received all DONE messages
+5: process 0 received all STARTED messages
+36: process 0 received all DONE messages
