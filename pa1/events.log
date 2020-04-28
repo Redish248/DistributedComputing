@@ -1,0 +1,22 @@
+Process 0 received all STARTED messages
+Process 0 received all DONE messages
+Process 1 (pid 11495, parent 11494) has STARTED
+Process 1 received all STARTED messages
+Process 1 has DONE its work
+Process 1 received all DONE messages
+Process 5 (pid 11499, parent 11494) has STARTED
+Process 5 received all STARTED messages
+Process 5 has DONE its work
+Process 5 received all DONE messages
+Process 2 (pid 11496, parent 11494) has STARTED
+Process 2 received all STARTED messages
+Process 2 has DONE its work
+Process 2 received all DONE messages
+Process 3 (pid 11497, parent 11494) has STARTED
+Process 3 received all STARTED messages
+Process 3 has DONE its work
+Process 3 received all DONE messages
+Process 4 (pid 11498, parent 11494) has STARTED
+Process 4 received all STARTED messages
+Process 4 has DONE its work
+Process 4 received all DONE messages

@@ -1,0 +1,4 @@
+/home/redish/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /mnt/redish/distributedComputing/pa1
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/redish/distributedComputing/pa1/cmake-build-debug
