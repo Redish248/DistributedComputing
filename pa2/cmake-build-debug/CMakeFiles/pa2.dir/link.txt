@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/pa2.dir/main.c.o CMakeFiles/pa2.dir/log.c.o CMakeFiles/pa2.dir/bank_robbery.c.o  -o pa2   -L/mnt/redish/distributedComputing/pa2  -Wl,-rpath,/mnt/redish/distributedComputing/pa2 -lruntime 

@@ -1,0 +1,146 @@
+0: process 3 (pid 24625, parent 24622) has STARTED with balance $10
+1: process 3 received all STARTED messages
+2: process 3 received $ 2 from process 2
+3: process 3 transferred $ 3 to process 4
+3: process 3 has DONE with balance $ 9
+10: process 3 received all DONE messages
+0: process 2 (pid 24624, parent 24622) has STARTED with balance $10
+1: process 2 received all STARTED messages
+1: process 2 received $ 1 from process 1
+2: process 2 transferred $ 2 to process 3
+2: process 2 has DONE with balance $ 9
+10: process 2 received all DONE messages
+0: process 1 (pid 24623, parent 24622) has STARTED with balance $10
+1: process 1 transferred $ 1 to process 2
+1: process 1 received all STARTED messages
+10: process 1 received $ 1 from process 10
+10: process 1 has DONE with balance $10
+10: process 1 received all DONE messages
+0: process 4 (pid 24626, parent 24622) has STARTED with balance $10
+1: process 4 received all STARTED messages
+3: process 4 received $ 3 from process 3
+4: process 4 transferred $ 4 to process 5
+4: process 4 has DONE with balance $ 9
+10: process 4 received all DONE messages
+0: process 5 (pid 24627, parent 24622) has STARTED with balance $10
+1: process 5 received all STARTED messages
+4: process 5 received $ 4 from process 4
+5: process 5 transferred $ 5 to process 6
+5: process 5 has DONE with balance $ 9
+10: process 5 received all DONE messages
+0: process 6 (pid 24628, parent 24622) has STARTED with balance $10
+1: process 6 received all STARTED messages
+5: process 6 received $ 5 from process 5
+6: process 6 transferred $ 6 to process 7
+6: process 6 has DONE with balance $ 9
+10: process 6 received all DONE messages
+0: process 7 (pid 24629, parent 24622) has STARTED with balance $10
+1: process 7 received all STARTED messages
+6: process 7 received $ 6 from process 6
+7: process 7 transferred $ 7 to process 8
+7: process 7 has DONE with balance $ 9
+10: process 7 received all DONE messages
+0: process 10 (pid 24632, parent 24622) has STARTED with balance $10
+2: process 10 received all STARTED messages
+9: process 10 received $ 9 from process 9
+10: process 10 transferred $ 1 to process 1
+10: process 10 has DONE with balance $18
+10: process 10 received all DONE messages
+0: process 8 (pid 24630, parent 24622) has STARTED with balance $10
+1: process 8 received all STARTED messages
+7: process 8 received $ 7 from process 7
+8: process 8 transferred $ 8 to process 9
+8: process 8 has DONE with balance $ 9
+10: process 8 received all DONE messages
+0: process 9 (pid 24631, parent 24622) has STARTED with balance $10
+1: process 9 received all STARTED messages
+8: process 9 received $ 8 from process 8
+9: process 9 transferred $ 9 to process 10
+9: process 9 has DONE with balance $ 9
+10: process 9 received all DONE messages
+0: process 0 received all STARTED messages
+10: process 0 received all DONE messages
+0: process 1 (pid 12327, parent 12325) has STARTED with balance $10
+1: process 1 received all STARTED messages
+10: process 1 has DONE with balance $10
+10: process 1 received all DONE messages
+0: process 2 (pid 12328, parent 12325) has STARTED with balance $10
+1: process 2 received all STARTED messages
+2: process 2 has DONE with balance $ 9
+10: process 2 received all DONE messages
+0: process 3 (pid 12329, parent 12325) has STARTED with balance $10
+1: process 3 received all STARTED messages
+3: process 3 has DONE with balance $ 9
+10: process 3 received all DONE messages
+0: process 4 (pid 12330, parent 12325) has STARTED with balance $10
+1: process 4 received all STARTED messages
+4: process 4 has DONE with balance $ 9
+10: process 4 received all DONE messages
+0: process 5 (pid 12331, parent 12325) has STARTED with balance $10
+1: process 5 received all STARTED messages
+5: process 5 has DONE with balance $ 9
+10: process 5 received all DONE messages
+0: process 6 (pid 12332, parent 12325) has STARTED with balance $10
+1: process 6 received all STARTED messages
+6: process 6 has DONE with balance $ 9
+10: process 6 received all DONE messages
+0: process 7 (pid 12333, parent 12325) has STARTED with balance $10
+1: process 7 received all STARTED messages
+7: process 7 has DONE with balance $ 9
+10: process 7 received all DONE messages
+0: process 8 (pid 12334, parent 12325) has STARTED with balance $10
+1: process 8 received all STARTED messages
+8: process 8 has DONE with balance $ 9
+10: process 8 received all DONE messages
+0: process 10 (pid 12336, parent 12325) has STARTED with balance $10
+1: process 10 received all STARTED messages
+10: process 10 has DONE with balance $18
+10: process 10 received all DONE messages
+0: process 9 (pid 12335, parent 12325) has STARTED with balance $10
+3: process 9 received all STARTED messages
+9: process 9 has DONE with balance $ 9
+10: process 9 received all DONE messages
+0: process 0 received all STARTED messages
+10: process 0 received all DONE messages
+0: process 1 (pid  8216, parent  8215) has STARTED with balance $10
+1: process 1 received all STARTED messages
+10: process 1 has DONE with balance $10
+10: process 1 received all DONE messages
+0: process 2 (pid  8217, parent  8215) has STARTED with balance $10
+1: process 2 received all STARTED messages
+2: process 2 has DONE with balance $ 9
+10: process 2 received all DONE messages
+0: process 3 (pid  8218, parent  8215) has STARTED with balance $10
+1: process 3 received all STARTED messages
+3: process 3 has DONE with balance $ 9
+10: process 3 received all DONE messages
+0: process 4 (pid  8219, parent  8215) has STARTED with balance $10
+1: process 4 received all STARTED messages
+4: process 4 has DONE with balance $ 9
+10: process 4 received all DONE messages
+0: process 5 (pid  8220, parent  8215) has STARTED with balance $10
+1: process 5 received all STARTED messages
+5: process 5 has DONE with balance $ 9
+10: process 5 received all DONE messages
+0: process 6 (pid  8221, parent  8215) has STARTED with balance $10
+2: process 6 received all STARTED messages
+6: process 6 has DONE with balance $ 9
+10: process 6 received all DONE messages
+0: process 7 (pid  8222, parent  8215) has STARTED with balance $10
+1: process 7 received all STARTED messages
+7: process 7 has DONE with balance $ 9
+10: process 7 received all DONE messages
+0: process 8 (pid  8223, parent  8215) has STARTED with balance $10
+1: process 8 received all STARTED messages
+8: process 8 has DONE with balance $ 9
+10: process 8 received all DONE messages
+0: process 9 (pid  8224, parent  8215) has STARTED with balance $10
+2: process 9 received all STARTED messages
+9: process 9 has DONE with balance $ 9
+10: process 9 received all DONE messages
+0: process 10 (pid  8225, parent  8215) has STARTED with balance $10
+3: process 10 received all STARTED messages
+10: process 10 has DONE with balance $18
+10: process 10 received all DONE messages
+0: process 0 received all STARTED messages
+10: process 0 received all DONE messages
