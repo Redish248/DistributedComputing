@@ -156,7 +156,6 @@ int receive(void *self, local_id from, Message *msg) {
             messagesDoneLeft--;
             break;
         case TRANSFER:
-         //   ((process_t *) self)->lamport_time++;
             receiveTransfer(msg);
             break;
         case STOP:
@@ -230,26 +229,25 @@ void receiveTransfer(Message* msg) {
     TransferOrder *transferOrder = (TransferOrder *) &msg->s_payload;
     transferOrder->s_amount = (int8_t) transferOrder->s_amount;
     if (transferOrder->s_src == currentId) {
-        //processes[currentId].balance -= transferOrder->s_amount;
+        chooseLamportTime(&processes[currentId], msg->s_header.s_local_time);
         changeBalance(get_lamport_time(), -transferOrder->s_amount);
-        processes[currentId].lamport_time++;
         msg->s_header.s_local_time = get_lamport_time();
         send(&processes[currentId], transferOrder->s_dst, msg);
         logTransferOut(lastTimeMoment, transferOrder->s_src, transferOrder->s_dst, (balance_t) transferOrder->s_amount);
     } else {
         if (transferOrder->s_dst == currentId) {
 
-            //processes[currentId].balance += transferOrder->s_amount;
-            changeBalance(get_lamport_time(), transferOrder->s_amount);
+            chooseLamportTime(&processes[currentId], msg->s_header.s_local_time);
 
             MessageHeader messageHeader;
             messageHeader.s_magic = MESSAGE_MAGIC;
             messageHeader.s_type = ACK;
             messageHeader.s_payload_len = 0;
-            processes[currentId].lamport_time++;
             messageHeader.s_local_time = get_lamport_time();
             Message message;
             message.s_header = messageHeader;
+
+            changeBalance(get_lamport_time(), transferOrder->s_amount);
 
             send(&processes[currentId], PARENT_ID, &message);
             logTransferIn(lastTimeMoment, transferOrder->s_src, transferOrder->s_dst, transferOrder->s_amount);
