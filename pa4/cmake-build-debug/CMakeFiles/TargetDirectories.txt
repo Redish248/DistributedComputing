@@ -1,0 +1,3 @@
+/home/olga/itmo/3course/distrComp/DistributedComputing/pa4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/olga/itmo/3course/distrComp/DistributedComputing/pa4/cmake-build-debug/CMakeFiles/pa4.dir
+/home/olga/itmo/3course/distrComp/DistributedComputing/pa4/cmake-build-debug/CMakeFiles/edit_cache.dir

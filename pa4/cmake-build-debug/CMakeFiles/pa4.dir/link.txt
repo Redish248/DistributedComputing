@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/pa4.dir/main.c.o CMakeFiles/pa4.dir/log.c.o CMakeFiles/pa4.dir/priorityQueue.c.o  -o pa4  -L/home/olga/itmo/3course/distrComp/DistributedComputing/pa4 -Wl,-rpath,/home/olga/itmo/3course/distrComp/DistributedComputing/pa4 -lruntime 

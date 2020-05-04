@@ -1,0 +1,4 @@
+/home/olga/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/192.7142.39/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/olga/itmo/3course/distrComp/DistributedComputing/pa4
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/olga/itmo/3course/distrComp/DistributedComputing/pa4/cmake-build-debug

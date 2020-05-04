@@ -1,0 +1,14 @@
+1: process 1 (pid 10728, parent 10727) has STARTED with balance $ 0
+3: process 1 received all STARTED messages
+4: process 1 has DONE with balance $ 0
+6: process 1 received all DONE messages
+1: process 2 (pid 10729, parent 10727) has STARTED with balance $ 0
+3: process 2 received all STARTED messages
+4: process 2 has DONE with balance $ 0
+6: process 2 received all DONE messages
+1: process 3 (pid 10730, parent 10727) has STARTED with balance $ 0
+3: process 3 received all STARTED messages
+4: process 3 has DONE with balance $ 0
+6: process 3 received all DONE messages
+4: process 0 received all STARTED messages
+7: process 0 received all DONE messages
