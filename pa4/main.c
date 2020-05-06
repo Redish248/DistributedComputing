@@ -23,8 +23,6 @@ int8_t messagesStartLeft, messagesDoneLeft, csRepliesLeft, csReplies;
 int8_t currentPhase = FISRT_PHASE;
 Node* requestQueue;
 
-timestamp_t lastTimeMoment;
-
 int main(int argc, char *argv[]) {
 
     if (readParams(argc, argv)) return -1;
@@ -269,20 +267,28 @@ int receive_any(void *self, Message *msg) {
 
 
 int readParams(int argc, char *argv[]) {
-    if (argc < 3 || strncmp(argv[1], "-p", 2)) {
-        printf("Incorrect input format!");
-        return -1;
+    if (argc == 3 && !strncmp(argv[1], "-p", 2)) {
+        numberOfPipes = (size_t) strtol(argv[2], NULL, 10);
+    } else {
+        if (argc == 4) {
+            if (!strncmp(argv[1], "-p", 2) && !strncmp(argv[3], "--mutexl", 8)) {
+                numberOfPipes = (size_t) strtol(argv[2], NULL, 10);
+                mutexl = true;
+            } else {
+                if (!strncmp(argv[1], "--mutexl", 8) && !strncmp(argv[2], "-p", 2)) {
+                    numberOfPipes = (size_t) strtol(argv[3], NULL, 10);
+                    mutexl = true;
+                } else {
+                    printf("Incorrect input format!");
+                    return -1;
+                }
+            }
+        }
     }
-
-    numberOfPipes = (size_t) strtol(argv[2], NULL, 10);
 
     if (numberOfPipes > MAX_PROCESS_ID) {
         printf("Too many processes requested!");
         return -1;
-    }
-
-    if (argc == 4 && !strncmp(argv[3], "--mutexl", 8)) {
-        mutexl = true;
     }
 
     return 0;
@@ -370,7 +376,7 @@ void sendStart() {
         message.s_header.s_payload_len = (uint16_t) strlen(message.s_payload);
         send_multicast(&processes[currentId], &message);
 
-        printProcessStarted(get_lamport_time(), processes[currentId], 0);
+        //printProcessStarted(get_lamport_time(), processes[currentId], 0);
         //log started
     }
 }
@@ -389,7 +395,7 @@ void sendDone() {
         message.s_header.s_payload_len = (uint16_t) strlen(message.s_payload);
         send_multicast(&processes[currentId], &message);
 
-        printProcessDone(get_lamport_time(), currentId, 0);
+        //printProcessDone(get_lamport_time(), currentId, 0);
         //log done
     }
 }
